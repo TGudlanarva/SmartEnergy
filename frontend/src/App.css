@@ -1,0 +1,691 @@
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f3f6fb;
+  color: #111827;
+}
+
+
+/* =====================================================
+   APP
+===================================================== */
+
+.app {
+  min-height: 100vh;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header {
+  background: #111827;
+  color: white;
+  padding: 25px 50px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 30px;
+}
+
+.header p {
+  margin: 6px 0 0;
+  color: #cbd5e1;
+}
+
+
+/* =====================================================
+   MAIN CONTAINER
+===================================================== */
+
+.container {
+  max-width: 1150px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+
+/* =====================================================
+   MAIN CARD
+===================================================== */
+
+.card {
+  background: white;
+  padding: 35px;
+  border-radius: 16px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+}
+
+.card h2 {
+  margin-top: 0;
+}
+
+.description {
+  color: #64748b;
+}
+
+
+/* =====================================================
+   LABEL
+===================================================== */
+
+label {
+  display: block;
+  margin-top: 25px;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+
+/* =====================================================
+   SEARCHABLE STATE DROPDOWN
+===================================================== */
+
+.state-dropdown {
+  position: relative;
+  width: 350px;
+  max-width: 100%;
+}
+
+
+/* =====================================================
+   SEARCH INPUT
+===================================================== */
+
+.search-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.search-wrapper input {
+  display: block;
+
+  width: 100%;
+  height: 48px;
+
+  padding: 0 45px 0 15px;
+
+  border: 1px solid #cbd5e1;
+  border-radius: 9px;
+
+  outline: none;
+
+  background: white;
+  color: #111827;
+
+  font-size: 16px;
+
+  box-shadow: none;
+}
+
+.search-wrapper input:focus {
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+
+/* =====================================================
+   DROPDOWN ARROW
+===================================================== */
+
+.arrow {
+  position: absolute;
+
+  right: 15px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  font-size: 12px;
+
+  color: #64748b;
+
+  pointer-events: none;
+
+  transition: transform 0.2s;
+}
+
+.arrow.rotate {
+  transform:
+    translateY(-50%)
+    rotate(180deg);
+}
+
+
+/* =====================================================
+   STATE OPTIONS
+===================================================== */
+
+.state-options {
+  position: absolute;
+
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+
+  width: 100%;
+
+  max-height: 260px;
+  height: auto;
+
+  overflow-y: auto;
+
+  padding: 5px 0;
+
+  background: white;
+
+  border: 1px solid #dbe3ef;
+
+  border-radius: 10px;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.15);
+
+  z-index: 9999;
+}
+
+
+/* =====================================================
+   STATE OPTION
+===================================================== */
+
+.state-option {
+  display: flex;
+
+  width: 100%;
+  min-height: 44px;
+
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 11px 15px;
+
+  cursor: pointer;
+
+  background: white;
+
+  color: #1e293b;
+
+  font-size: 15px;
+
+  transition: background 0.15s;
+}
+
+.state-option:hover {
+  background: #eff6ff;
+}
+
+.state-option.selected {
+  background: #dbeafe;
+
+  color: #1d4ed8;
+
+  font-weight: 600;
+}
+
+
+/* =====================================================
+   NO RESULTS
+===================================================== */
+
+.no-results {
+  padding: 14px;
+
+  text-align: center;
+
+  color: #64748b;
+
+  background: white;
+}
+
+
+/* =====================================================
+   SCROLLBAR
+===================================================== */
+
+.state-options::-webkit-scrollbar {
+  width: 7px;
+}
+
+.state-options::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+
+.state-options::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.buttons {
+  display: flex;
+
+  gap: 15px;
+
+  flex-wrap: wrap;
+}
+
+button {
+  margin-top: 20px;
+
+  padding: 13px 22px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: #2563eb;
+
+  color: white;
+
+  font-size: 16px;
+
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+button:disabled {
+  background: #94a3b8;
+
+  cursor: not-allowed;
+}
+
+.secondary-button {
+  background: #0f766e;
+}
+
+.secondary-button:hover {
+  background: #115e59;
+}
+
+
+/* =====================================================
+   ERROR
+===================================================== */
+
+.error {
+  margin-top: 20px;
+
+  padding: 15px;
+
+  border-radius: 8px;
+
+  background: #fee2e2;
+
+  color: #991b1b;
+}
+
+
+/* =====================================================
+   SECTIONS
+===================================================== */
+
+.prediction-section,
+.forecast-section {
+  margin-top: 30px;
+}
+
+.section-title {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 20px;
+}
+
+.section-title h2 {
+  margin-bottom: 5px;
+}
+
+.section-title p {
+  color: #64748b;
+}
+
+
+/* =====================================================
+   DEMAND CARD
+===================================================== */
+
+.demand-card {
+  background: white;
+
+  padding: 30px;
+
+  border-radius: 16px;
+
+  box-shadow:
+    0 5px 20px rgba(0, 0, 0, 0.07);
+}
+
+.demand-label {
+  color: #64748b;
+
+  font-size: 15px;
+}
+
+.demand {
+  margin-top: 10px;
+
+  font-size: 52px;
+
+  font-weight: bold;
+
+  color: #2563eb;
+}
+
+.demand span {
+  margin-left: 8px;
+
+  font-size: 22px;
+
+  color: #64748b;
+}
+
+
+/* =====================================================
+   SUB HEADING
+===================================================== */
+
+.sub-heading {
+  margin-top: 35px;
+
+  margin-bottom: 15px;
+}
+
+
+/* =====================================================
+   WEATHER
+===================================================== */
+
+.weather {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 15px;
+}
+
+.weather-card {
+  padding: 22px;
+
+  background: white;
+
+  border-radius: 12px;
+
+  text-align: center;
+
+  box-shadow:
+    0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.weather-icon {
+  font-size: 28px;
+}
+
+.weather-card h3 {
+  font-size: 15px;
+
+  color: #475569;
+}
+
+.weather-card p {
+  font-size: 22px;
+
+  font-weight: bold;
+}
+
+
+/* =====================================================
+   FORECAST
+===================================================== */
+
+.forecast-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 15px;
+}
+
+.forecast-card {
+  background: white;
+
+  padding: 20px;
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.forecast-date {
+  color: #64748b;
+
+  font-weight: bold;
+}
+
+.forecast-demand {
+  margin-top: 12px;
+
+  font-size: 27px;
+
+  font-weight: bold;
+
+  color: #2563eb;
+}
+
+.forecast-demand span {
+  font-size: 14px;
+
+  color: #64748b;
+}
+
+.forecast-weather {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+
+  margin-top: 15px;
+
+  font-size: 14px;
+
+  color: #475569;
+}
+
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.table-container {
+  overflow-x: auto;
+
+  background: white;
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+table {
+  width: 100%;
+
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 15px;
+
+  text-align: left;
+
+  border-bottom:
+    1px solid #e2e8f0;
+}
+
+th {
+  background: #f8fafc;
+
+  color: #475569;
+}
+
+td strong {
+  color: #2563eb;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 800px) {
+
+  .header {
+    padding: 20px;
+  }
+
+  .container {
+    margin: 25px auto;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .weather {
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+  .forecast-grid {
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+}
+
+
+@media (max-width: 500px) {
+
+  .weather {
+    grid-template-columns: 1fr;
+  }
+
+  .forecast-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .demand {
+    font-size: 40px;
+  }
+
+}
+/* =====================================================
+   SUMMARY CARDS
+===================================================== */
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 25px;
+}
+
+.summary-card {
+  background: white;
+  padding: 24px;
+  border-radius: 14px;
+
+  box-shadow:
+    0 4px 15px rgba(0, 0, 0, 0.06);
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.summary-card span {
+  color: #64748b;
+  font-size: 14px;
+}
+
+.summary-card strong {
+  color: #111827;
+  font-size: 26px;
+}
+
+
+/* =====================================================
+   CHART
+===================================================== */
+
+.chart-card {
+  background: white;
+
+  padding: 30px;
+
+  border-radius: 16px;
+
+  box-shadow:
+    0 5px 20px rgba(0, 0, 0, 0.07);
+
+  margin-bottom: 30px;
+}
+
+.chart-card h3 {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.chart-container {
+  width: 100%;
+  height: 350px;
+  margin-top: 20px;
+}
+
+
+/* =====================================================
+   RESPONSIVE SUMMARY
+===================================================== */
+
+@media (max-width: 800px) {
+
+  .summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+}

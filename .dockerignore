@@ -1,0 +1,9 @@
+venv/
+frontend/
+node_modules/
+__pycache__/
+*.pyc
+.git/
+.gitignore
+SmartEnergy-working-backup.zip
+models/energy_demand_model.pkl
