@@ -12,7 +12,7 @@ import requests
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-MODEL_PATH = BASE_DIR / "models" / "weather_energy_model.pkl"
+MODEL_PATH = BASE_DIR / "models" / "weather_energy_model_free.pkl"
 
 DATA_PATH = BASE_DIR / "data" / "smart_energy_dataset.csv"
 

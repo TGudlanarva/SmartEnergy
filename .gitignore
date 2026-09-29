@@ -9,3 +9,6 @@ __pycache__/
 *.log
 SmartEnergy-working-backup.zip
 models/*.pkl
+
+backend/models/*
+!backend/models/weather_energy_model_free.pkl
