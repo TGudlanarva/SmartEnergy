@@ -297,6 +297,7 @@ def get_weather(
 # =========================================================
 
 @app.get("/predict/{state}")
+@app.get("/api/predict/{state}")
 def predict_tomorrow(state: str):
 
     if model is None:
@@ -504,6 +505,7 @@ def predict_tomorrow(state: str):
 # =========================================================
 
 @app.get("/forecast/7-days/{state}")
+@app.get("/api/forecast/7-days/{state}")
 def forecast_seven_days(state: str):
 
     if model is None:
@@ -869,6 +871,7 @@ def forecast_seven_days(state: str):
 
     }
 @app.get("/model-performance")
+@app.get("/api/model-performance")
 def model_performance():
     return {
         "models": [
