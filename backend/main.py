@@ -10,7 +10,7 @@ import requests
 # PATHS
 # =========================================================
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent
 
 MODEL_PATH = BASE_DIR / "models" / "weather_energy_model_free.pkl"
 
@@ -152,6 +152,8 @@ STATE_COORDINATES = {
 # LOAD MODEL
 # =========================================================
 
+model_load_error = None
+
 try:
 
     model = joblib.load(MODEL_PATH)
@@ -161,6 +163,7 @@ try:
 except Exception as e:
 
     model = None
+    model_load_error = str(e)
 
     print("Model loading error:", e)
 
@@ -184,7 +187,6 @@ except Exception as e:
     df = None
 
     print("Dataset loading error:", e)
-
 
 # =========================================================
 # STATE CODE MAPPING
@@ -304,7 +306,7 @@ def predict_tomorrow(state: str):
 
         raise HTTPException(
             status_code=500,
-            detail="ML model could not be loaded."
+            detail=f"ML model could not be loaded: {model_load_error}"
         )
 
 
